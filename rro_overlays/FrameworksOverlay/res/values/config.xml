@@ -24,7 +24,7 @@
     <bool name="config_supportDoubleTapWake">true</bool>
 
     <!-- UI -->
-    <string name="config_mainBuiltInDisplayCutout">M -50,0 L 50,0 L 50,115 L -50,115 Z</string>
+    <string name="config_mainBuiltInDisplayCutout">M -40,0 L 40,0 L 40,110 L -40,110 Z</string>
 
     <!-- Height of area above QQS where battery/time go. -->
     <dimen name="quick_qs_offset_height">@dimen/status_bar_height_portrait</dimen>

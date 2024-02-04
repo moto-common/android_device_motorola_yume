@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
@@ -29,29 +27,20 @@ SOONG_CONFIG_qtidisplay_brightness := true
 DEVICE_CHARACTERISTICS += hfr
 
 # Device path
-DEVICE_PATH := device/motorola/milanf/rootdir
-
-# Fingerprint
-TARGET_USES_EGISTEC_FINGERPRINT := true
-TARGET_USES_SILEAD_FINGERPRINT := true
+DEVICE_PATH := device/motorola/yume/rootdir
 
 # Model
-PRODUCT_MODEL := moto g stylus 5g 2022
-
-# Modules
-BOOT_KERNEL_MODULES := \
-    tcpc_sgm7220.ko \
-    tcpc_rt1711h.ko \
-    rt_pd_manager.ko
+PRODUCT_MODEL := moto g stylus 5g 2023
 
 # NFC
-TARGET_USES_PN5XX_PN8X_NFC := true
-
-# Power
-TARGET_IS_BLAIR := true
+TARGET_USES_SN1XX_NFC  := true
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/motorola/sm4350-common/platform.mk)
+$(call inherit-product, device/motorola/sm6450-common/platform.mk)
 
 # include board vendor blobs
-$(call inherit-product-if-exists, vendor/motorola/milanf/milanf-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/yume/yume-vendor.mk)
+
+BOOT_KERNEL_MODULES := $(sort \
+    $(strip $(shell cat device/motorola/yume/modules.load.recovery)) \
+    $(strip $(shell cat device/motorola/yume/modules.load.ramdisk)))

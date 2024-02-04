@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=milanf
+DEVICE=yume
 VENDOR=motorola
 
 # Load extract utilities and do some sanity checks.
@@ -62,6 +62,15 @@ done
 if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
+
+function blob_fixup() {
+    case "${1}" in
+
+      vendor/lib64/libcamximageformatutils.so)
+           ${PATCHELF} --replace-needed vendor.qti.hardware.display.config-V2-ndk_platform.so vendor.qti.hardware.display.config-V2-ndk.so "${2}"
+           ;;
+    esac
+}
 
 # Initialize the helper.
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
