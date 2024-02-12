@@ -34,4 +34,3 @@ BOARD_MOT_DYNAMIC_PARTITIONS_PARTITION_LIST := \
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat device/motorola/yume/modules.load.ramdisk))
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat device/motorola/yume/modules.load.recovery))
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat device/motorola/yume/modules.load))
-BOARD_VENDOR_KERNEL_MODULES :=  $(foreach module,$(BOARD_VENDOR_KERNEL_MODULES_LOAD),$(TARGET_DEVICE_DIR)-kernel/modules/$(module))
