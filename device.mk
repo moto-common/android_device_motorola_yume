@@ -33,7 +33,7 @@ DEVICE_PATH := device/motorola/yume/rootdir
 PRODUCT_MODEL := moto g stylus 5g 2023
 
 # NFC
-TARGET_USES_SN1XX_NFC  := true
+TARGET_USES_NXP_NFC := true
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/sm6450-common/platform.mk)
