@@ -247,11 +247,10 @@ rmnet_shs.ko
 rmnet_wlan.ko
 rmnet_aps.ko
 rmnet_sch.ko
-qca_cld3_wlan.ko
+wlan.ko
 msm_drm.ko
 msm-mmrm.ko
 msm_video.ko
-utags.ko
 mmi_annotate.ko
 mmi_info.ko
 mmi_charger.ko
