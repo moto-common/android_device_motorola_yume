@@ -89,7 +89,7 @@ rdbg.ko
 qcom_iommu_debug.ko
 msm_kgsl.ko
 zram.ko
-hdcp_qseecom.ko
+hdcp.ko
 qseecom-mod.ko
 qcom-i2c-pmic.ko
 nfc_i2c.ko
@@ -120,12 +120,11 @@ ucsi_glink.ko
 pm8941-pwrkey.ko
 qpnp-power-on.ko
 i2c-msm-geni.ko
-i2c-dev.ko
 qcom_ipc_lite.ko
 synx-driver.ko
 qcom-pon.ko
 reboot-mode.ko
-qti_battery_charger.ko
+qti_battery_charger_main.ko
 schgm-flash.ko
 qcom-spmi-temp-alarm.ko
 qti-adc-tm.ko
@@ -253,6 +252,7 @@ msm-mmrm.ko
 msm_video.ko
 mmi_annotate.ko
 mmi_info.ko
+utags.ko
 mmi_charger.ko
 mmi_relay.ko
 mmi_sys_temp.ko
